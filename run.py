@@ -1,5 +1,7 @@
-from DataParser import DataVector
 from DataParser import DataParser
+from DataParser import DataVector
+from Planer import ObservationPlaner
+
 
 if __name__ == "__main__":
 
@@ -8,6 +10,9 @@ if __name__ == "__main__":
     print(len(data))
 
     data_entry = DataVector()
-    data_entry = data[1]
+    data_entry = data[0]
 
-    print(data_entry.date_year)
+    print(data_entry.horiz_altitude)
+
+    planer = ObservationPlaner()
+    planer.calulateObservations()

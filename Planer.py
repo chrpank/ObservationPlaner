@@ -24,4 +24,13 @@ class ObservationPlaner:
         self.uranus = Uranus()
         self.pluto = Pluto()
 
-    # def calulateObservations(self):
+    def calulateObservations(self):
+        self.moon.calculateObservations()
+        # self.mercury.calculateObservations()
+        # self.venus.calculateObservations()
+        # self.mars.calculateObservations()
+        # self.jupiter.calculateObservations()
+        # self.saturn.calculateObservations()
+        # self.uranus.calculateObservations()
+        # self.neptune.calculateObservations()
+        # self.pluto.calculateObservations()

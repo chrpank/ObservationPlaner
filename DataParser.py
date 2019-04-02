@@ -55,7 +55,7 @@ class DataParser:
     def __init__(self):
         self.version = "1"
 
-    def parseDataFile(self, filename="Moon2019.txt"):
+    def parseDataFile(self, filename="data/Moon2019.txt"):
 
         temp_data = DataVector()
         parsed_data = []
