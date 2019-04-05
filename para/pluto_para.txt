@@ -1,0 +1,3 @@
++030.000.....min_obj_alt
++050.000.....min_sun_dist
+-030.000.....max_sun_alt

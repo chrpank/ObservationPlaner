@@ -1,4 +1,5 @@
 import argparse
+from math import pow
 
 debug_mode = False
 
@@ -70,12 +71,12 @@ for index in range(len(obj_data_lins)):
         print("sun_alti = " + sun_alti)
 
     # check conditions
-    cond_obj_azim = bool(float(obj_azim) > float(site_min_azim) and
-                         float(obj_azim) < float(site_max_azim))
-    cond_obj_alti = bool(float(obj_alti) > float(obj_min_alti))
-    cond_sun_alti = bool(float(sun_alti) < float(sun_max_alti))
+    cond_obj_azim = bool(float(obj_azim) >= float(site_min_azim) and
+                         float(obj_azim) <= float(site_max_azim))
+    cond_obj_alti = bool(float(obj_alti) >= float(obj_min_alti))
+    cond_sun_alti = bool(float(sun_alti) <= float(sun_max_alti))
     cond_sun_dist = bool(abs(float(obj_azim) - float(sun_azim))
-                         > float(sun_min_dist))
+                         >= float(sun_min_dist))
 
     if (cond_obj_azim and
         cond_obj_alti and
