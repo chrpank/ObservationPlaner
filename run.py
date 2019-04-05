@@ -14,7 +14,6 @@ arg_parser.add_argument("obj_data_path",
 arg_parser.add_argument("sun_data_path",
                         help="The sun data filepath.")
 
-
 print("observation event calculation")
 print("sit_para_path = " + arg_parser.parse_args().sit_para_path)
 print("obj_para_path = " + arg_parser.parse_args().obj_para_path)
@@ -75,8 +74,13 @@ for index in range(len(obj_data_lins)):
                          float(obj_azim) < float(site_max_azim))
     cond_obj_alti = bool(float(obj_alti) > float(obj_min_alti))
     cond_sun_alti = bool(float(sun_alti) < float(sun_max_alti))
+    cond_sun_dist = bool(abs(float(obj_azim) - float(sun_azim))
+                         > float(sun_min_dist))
 
-    if (cond_obj_azim and cond_obj_alti and cond_sun_alti):
+    if (cond_obj_azim and
+        cond_obj_alti and
+        cond_sun_alti and
+            cond_sun_dist):
         print(obj_line.rstrip())
         event_not_found = False
 
