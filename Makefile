@@ -1,0 +1,68 @@
+PYTHON = python
+SCRIPT = run.py
+
+PARA_PATH = para
+DATA_PATH = data
+
+PARA_SITE = $(PARA_PATH)/site_para.txt
+
+# object parameter files
+PARA_SUNN = $(PARA_PATH)/sun_para.txt
+PARA_MERC = $(PARA_PATH)/mercury_para.txt
+PARA_VENU = $(PARA_PATH)/venus_para.txt
+PARA_MOON = $(PARA_PATH)/moon_para.txt
+PARA_MARS = $(PARA_PATH)/mars_para.txt
+PARA_JUPI = $(PARA_PATH)/jupiter_para.txt
+PARA_SATU = $(PARA_PATH)/saturn_para.txt
+PARA_URAN = $(PARA_PATH)/uranus_para.txt
+PARA_NEPT = $(PARA_PATH)/neptune_para.txt
+PARA_PLUT = $(PARA_PATH)/pluto_para.txt
+
+# object data files
+DATA_SUNN_2019 = $(DATA_PATH)/Sun2019.txt
+DATA_SUNN_2020 = $(DATA_PATH)/Sun2020.txt
+DATA_SUNN_2021 = $(DATA_PATH)/Sun2021.txt
+
+DATA_MERC_2019 = $(DATA_PATH)/Mercury2019.txt
+DATA_MERC_2020 = $(DATA_PATH)/Mercury2020.txt
+DATA_MERC_2021 = $(DATA_PATH)/Mercury2021.txt
+
+DATA_VENU_2019 = $(DATA_PATH)/Venus2019.txt
+DATA_VENU_2020 = $(DATA_PATH)/Venus2020.txt
+DATA_VENU_2021 = $(DATA_PATH)/Venus2021.txt
+
+DATA_MOON_2019 = $(DATA_PATH)/Moon2019.txt
+DATA_MOON_2020 = $(DATA_PATH)/Moon2020.txt
+DATA_MOON_2021 = $(DATA_PATH)/Moon2021.txt
+
+DATA_MARS_2019 = $(DATA_PATH)/Mars2019.txt
+DATA_MARS_2020 = $(DATA_PATH)/Mars2020.txt
+DATA_MARS_2021 = $(DATA_PATH)/Mars2021.txt
+
+DATA_JUPI_2019 = $(DATA_PATH)/Jupiter2019.txt
+DATA_JUPI_2020 = $(DATA_PATH)/Jupiter2020.txt
+DATA_JUPI_2021 = $(DATA_PATH)/Jupiter2021.txt
+
+DATA_SATU_2019 = $(DATA_PATH)/Saturn2019.txt
+DATA_SATU_2020 = $(DATA_PATH)/Saturn2020.txt
+DATA_SATU_2021 = $(DATA_PATH)/Saturn2021.txt
+
+DATA_URAN_2019 = $(DATA_PATH)/Uranus2019.txt
+DATA_URAN_2020 = $(DATA_PATH)/Uranus2020.txt
+DATA_URAN_2021 = $(DATA_PATH)/Uranus2021.txt
+
+DATA_NEPT_2019 = $(DATA_PATH)/Neptune2019.txt
+DATA_NEPT_2020 = $(DATA_PATH)/Neptune2020.txt
+DATA_NEPT_2021 = $(DATA_PATH)/Neptune2021.txt
+
+DATA_PLUT_2019 = $(DATA_PATH)/Pluto2019.txt
+DATA_PLUT_2020 = $(DATA_PATH)/Pluto2020.txt
+DATA_PLUT_2021 = $(DATA_PATH)/Pluto2021.txt
+
+
+all:
+	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_MOON) $(DATA_MOON_2019) $(DATA_SUNN_2019)
+	#$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_MOON) $(DATA_MOON_2020) $(DATA_SUNN_2020)
+	#$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_MOON) $(DATA_MOON_2021) $(DATA_SUNN_2021)
+
+
