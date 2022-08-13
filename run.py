@@ -1,7 +1,11 @@
-import argparse
-from math import pow
+"""
+Tool for displaying observing times of solar system objects.
+Christian Pankratz, 2022
+"""
 
-debug_mode = False
+import argparse
+
+ENABLE_DEBUG_MODE = False
 
 # parse commandline arguments
 arg_parser = argparse.ArgumentParser()
@@ -52,7 +56,7 @@ sun_data_lins = sun_data_file.readlines()[8:]
 
 print("table of observation events")
 
-event_not_found = True
+EVENT_NOT_FOUND = True
 
 for index in range(len(obj_data_lins)):
 
@@ -64,7 +68,7 @@ for index in range(len(obj_data_lins)):
     sun_azim = sun_line[78:78 + 7]
     sun_alti = sun_line[86:86 + 7]
 
-    if debug_mode:
+    if ENABLE_DEBUG_MODE:
         print("obj_azim = " + obj_azim)
         print("obj_alti = " + obj_alti)
         print("sun_azim = " + sun_azim)
@@ -83,9 +87,9 @@ for index in range(len(obj_data_lins)):
         cond_sun_alti and
             cond_sun_dist):
         print(obj_line.rstrip())
-        event_not_found = False
+        EVENT_NOT_FOUND = False
 
-if event_not_found is True:
+if EVENT_NOT_FOUND is True:
     print("No events found.")
 
 print("end of output")

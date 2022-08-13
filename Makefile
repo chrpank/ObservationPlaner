@@ -1,182 +1,38 @@
-PYTHON = python
-SCRIPT = run.py
 
-PARA_PATH = para
-DATA_PATH = data
-
-PARA_SITE = $(PARA_PATH)/site_para.txt
-
-# object parameter files
-PARA_SUNN = $(PARA_PATH)/sun_para.txt
-PARA_MERC = $(PARA_PATH)/mercury_para.txt
-PARA_VENU = $(PARA_PATH)/venus_para.txt
-PARA_MOON = $(PARA_PATH)/moon_para.txt
-PARA_MARS = $(PARA_PATH)/mars_para.txt
-PARA_JUPI = $(PARA_PATH)/jupiter_para.txt
-PARA_SATU = $(PARA_PATH)/saturn_para.txt
-PARA_URAN = $(PARA_PATH)/uranus_para.txt
-PARA_NEPT = $(PARA_PATH)/neptune_para.txt
-PARA_PLUT = $(PARA_PATH)/pluto_para.txt
-
-# object data files
-DATA_SUNN_2019 = $(DATA_PATH)/Sun2019.txt
-DATA_SUNN_2020 = $(DATA_PATH)/Sun2020.txt
-DATA_SUNN_2021 = $(DATA_PATH)/Sun2021.txt
-DATA_SUNN_2022 = $(DATA_PATH)/Sun2022.txt
-DATA_SUNN_2023 = $(DATA_PATH)/Sun2023.txt
-DATA_SUNN_2024 = $(DATA_PATH)/Sun2024.txt
-DATA_SUNN_2025 = $(DATA_PATH)/Sun2025.txt
-DATA_SUNN_2026 = $(DATA_PATH)/Sun2026.txt
-DATA_SUNN_2027 = $(DATA_PATH)/Sun2027.txt
-DATA_SUNN_2028 = $(DATA_PATH)/Sun2028.txt
-DATA_SUNN_2029 = $(DATA_PATH)/Sun2029.txt
-DATA_SUNN_2030 = $(DATA_PATH)/Sun2030.txt
-
-DATA_MERC_2019 = $(DATA_PATH)/Mercury2019.txt
-DATA_MERC_2020 = $(DATA_PATH)/Mercury2020.txt
-DATA_MERC_2021 = $(DATA_PATH)/Mercury2021.txt
-
-DATA_VENU_2019 = $(DATA_PATH)/Venus2019.txt
-DATA_VENU_2020 = $(DATA_PATH)/Venus2020.txt
-DATA_VENU_2021 = $(DATA_PATH)/Venus2021.txt
-
-DATA_MOON_2019 = $(DATA_PATH)/Moon2019.txt
-DATA_MOON_2020 = $(DATA_PATH)/Moon2020.txt
-DATA_MOON_2021 = $(DATA_PATH)/Moon2021.txt
-
-DATA_MARS_2019 = $(DATA_PATH)/Mars2019.txt
-DATA_MARS_2020 = $(DATA_PATH)/Mars2020.txt
-DATA_MARS_2021 = $(DATA_PATH)/Mars2021.txt
-DATA_MARS_2022 = $(DATA_PATH)/Mars2022.txt
-DATA_MARS_2023 = $(DATA_PATH)/Mars2023.txt
-DATA_MARS_2024 = $(DATA_PATH)/Mars2024.txt
-DATA_MARS_2025 = $(DATA_PATH)/Mars2025.txt
-DATA_MARS_2026 = $(DATA_PATH)/Mars2026.txt
-DATA_MARS_2027 = $(DATA_PATH)/Mars2027.txt
-DATA_MARS_2028 = $(DATA_PATH)/Mars2028.txt
-DATA_MARS_2029 = $(DATA_PATH)/Mars2029.txt
-DATA_MARS_2030 = $(DATA_PATH)/Mars2030.txt
-
-DATA_JUPI_2019 = $(DATA_PATH)/Jupiter2019.txt
-DATA_JUPI_2020 = $(DATA_PATH)/Jupiter2020.txt
-DATA_JUPI_2021 = $(DATA_PATH)/Jupiter2021.txt
-DATA_JUPI_2022 = $(DATA_PATH)/Jupiter2022.txt
-DATA_JUPI_2023 = $(DATA_PATH)/Jupiter2023.txt
-DATA_JUPI_2024 = $(DATA_PATH)/Jupiter2024.txt
-DATA_JUPI_2025 = $(DATA_PATH)/Jupiter2025.txt
-DATA_JUPI_2026 = $(DATA_PATH)/Jupiter2026.txt
-DATA_JUPI_2027 = $(DATA_PATH)/Jupiter2027.txt
-DATA_JUPI_2028 = $(DATA_PATH)/Jupiter2028.txt
-DATA_JUPI_2029 = $(DATA_PATH)/Jupiter2029.txt
-DATA_JUPI_2030 = $(DATA_PATH)/Jupiter2030.txt
-
-DATA_SATU_2019 = $(DATA_PATH)/Saturn2019.txt
-DATA_SATU_2020 = $(DATA_PATH)/Saturn2020.txt
-DATA_SATU_2021 = $(DATA_PATH)/Saturn2021.txt
-
-DATA_URAN_2019 = $(DATA_PATH)/Uranus2019.txt
-DATA_URAN_2020 = $(DATA_PATH)/Uranus2020.txt
-DATA_URAN_2021 = $(DATA_PATH)/Uranus2021.txt
-
-DATA_NEPT_2019 = $(DATA_PATH)/Neptune2019.txt
-DATA_NEPT_2020 = $(DATA_PATH)/Neptune2020.txt
-DATA_NEPT_2021 = $(DATA_PATH)/Neptune2021.txt
-
-DATA_PLUT_2019 = $(DATA_PATH)/Pluto2019.txt
-DATA_PLUT_2020 = $(DATA_PATH)/Pluto2020.txt
-DATA_PLUT_2021 = $(DATA_PATH)/Pluto2021.txt
-
-
-all: Sun Moon Mercury Venus Mars Jupiter Saturn Uranus Neptune Pluto
+all: Sun Moon Mercury Venus Mars Jupiter Saturn Uranus Neptune
 
 Sun:
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_SUNN) $(DATA_SUNN_2019) $(DATA_SUNN_2019)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_SUNN) $(DATA_SUNN_2020) $(DATA_SUNN_2020)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_SUNN) $(DATA_SUNN_2021) $(DATA_SUNN_2021)
+	python run.py para/site_para.txt para/sun_para.txt data/Sun2022.txt data/Sun2022.txt
+	python run.py para/site_para.txt para/sun_para.txt data/Sun2023.txt data/Sun2023.txt
 
 Moon:
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_MOON) $(DATA_MOON_2019) $(DATA_SUNN_2019)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_MOON) $(DATA_MOON_2020) $(DATA_SUNN_2020)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_MOON) $(DATA_MOON_2021) $(DATA_SUNN_2021)
+	python run.py para/site_para.txt para/moon_para.txt data/Moon2022.txt data/Sun2022.txt
+	python run.py para/site_para.txt para/moon_para.txt data/Moon2023.txt data/Sun2023.txt
 
 Mercury:
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_MERC) $(DATA_MERC_2019) $(DATA_SUNN_2019)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_MERC) $(DATA_MERC_2020) $(DATA_SUNN_2020)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_MERC) $(DATA_MERC_2021) $(DATA_SUNN_2021)
+	python run.py para/site_para.txt para/mercury_para.txt data/Mercury2022.txt data/Sun2022.txt
+	python run.py para/site_para.txt para/mercury_para.txt data/Mercury2023.txt data/Sun2023.txt
 
 Venus:
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_VENU) $(DATA_VENU_2019) $(DATA_SUNN_2019)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_VENU) $(DATA_VENU_2020) $(DATA_SUNN_2020)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_VENU) $(DATA_VENU_2021) $(DATA_SUNN_2021)
+	python run.py para/site_para.txt para/venus_para.txt data/Venus2022.txt data/Sun2022.txt
+	python run.py para/site_para.txt para/venus_para.txt data/Venus2023.txt data/Sun2023.txt
 
 Mars:
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_MARS) $(DATA_MARS_2019) $(DATA_SUNN_2019)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_MARS) $(DATA_MARS_2020) $(DATA_SUNN_2020)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_MARS) $(DATA_MARS_2021) $(DATA_SUNN_2021)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_MARS) $(DATA_MARS_2022) $(DATA_SUNN_2022)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_MARS) $(DATA_MARS_2023) $(DATA_SUNN_2023)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_MARS) $(DATA_MARS_2024) $(DATA_SUNN_2024)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_MARS) $(DATA_MARS_2025) $(DATA_SUNN_2025)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_MARS) $(DATA_MARS_2026) $(DATA_SUNN_2026)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_MARS) $(DATA_MARS_2027) $(DATA_SUNN_2027)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_MARS) $(DATA_MARS_2028) $(DATA_SUNN_2028)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_MARS) $(DATA_MARS_2029) $(DATA_SUNN_2029)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_MARS) $(DATA_MARS_2030) $(DATA_SUNN_2030)
+	python run.py para/site_para.txt para/mars_para.txt data/Mars2022.txt data/Sun2022.txt
+	python run.py para/site_para.txt para/mars_para.txt data/Mars2023.txt data/Sun2023.txt
 
 Jupiter:
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_JUPI) $(DATA_JUPI_2019) $(DATA_SUNN_2019)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_JUPI) $(DATA_JUPI_2020) $(DATA_SUNN_2020)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_JUPI) $(DATA_JUPI_2021) $(DATA_SUNN_2021)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_JUPI) $(DATA_JUPI_2022) $(DATA_SUNN_2022)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_JUPI) $(DATA_JUPI_2023) $(DATA_SUNN_2023)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_JUPI) $(DATA_JUPI_2024) $(DATA_SUNN_2024)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_JUPI) $(DATA_JUPI_2025) $(DATA_SUNN_2025)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_JUPI) $(DATA_JUPI_2026) $(DATA_SUNN_2026)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_JUPI) $(DATA_JUPI_2027) $(DATA_SUNN_2027)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_JUPI) $(DATA_JUPI_2028) $(DATA_SUNN_2028)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_JUPI) $(DATA_JUPI_2029) $(DATA_SUNN_2029)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_JUPI) $(DATA_JUPI_2030) $(DATA_SUNN_2030)
+	python run.py para/site_para.txt para/jupiter_para.txt data/Jupiter2022.txt data/Sun2022.txt
+	python run.py para/site_para.txt para/jupiter_para.txt data/Jupiter2023.txt data/Sun2023.txt
 
 Saturn:
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_SATU) $(DATA_SATU_2019) $(DATA_SUNN_2019)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_SATU) $(DATA_SATU_2020) $(DATA_SUNN_2020)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_SATU) $(DATA_SATU_2021) $(DATA_SUNN_2021)
+	python run.py para/site_para.txt para/saturn_para.txt data/Saturn2022.txt data/Sun2022.txt
+	python run.py para/site_para.txt para/saturn_para.txt data/Saturn2023.txt data/Sun2023.txt
 
 Uranus:
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_URAN) $(DATA_URAN_2019) $(DATA_SUNN_2019)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_URAN) $(DATA_URAN_2020) $(DATA_SUNN_2020)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_URAN) $(DATA_URAN_2021) $(DATA_SUNN_2021)
+	python run.py para/site_para.txt para/uranus_para.txt data/Uranus2022.txt data/Sun2022.txt
+	python run.py para/site_para.txt para/uranus_para.txt data/Uranus2023.txt data/Sun2023.txt
 
 Neptune:
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_NEPT) $(DATA_NEPT_2019) $(DATA_SUNN_2019)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_NEPT) $(DATA_NEPT_2020) $(DATA_SUNN_2020)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_NEPT) $(DATA_NEPT_2021) $(DATA_SUNN_2021)
-
-Pluto:
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_PLUT) $(DATA_PLUT_2019) $(DATA_SUNN_2019)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_PLUT) $(DATA_PLUT_2020) $(DATA_SUNN_2020)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_PLUT) $(DATA_PLUT_2021) $(DATA_SUNN_2021)
-
-2019:
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_SUNN) $(DATA_SUNN_2019) $(DATA_SUNN_2019)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_MOON) $(DATA_MOON_2019) $(DATA_SUNN_2019)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_MERC) $(DATA_MERC_2019) $(DATA_SUNN_2019)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_VENU) $(DATA_VENU_2019) $(DATA_SUNN_2019)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_MARS) $(DATA_MARS_2019) $(DATA_SUNN_2019)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_JUPI) $(DATA_JUPI_2019) $(DATA_SUNN_2019)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_SATU) $(DATA_SATU_2019) $(DATA_SUNN_2019)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_URAN) $(DATA_URAN_2019) $(DATA_SUNN_2019)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_NEPT) $(DATA_NEPT_2019) $(DATA_SUNN_2019)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_PLUT) $(DATA_PLUT_2019) $(DATA_SUNN_2019)
-
-2020:
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_SUNN) $(DATA_SUNN_2020) $(DATA_SUNN_2020)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_MOON) $(DATA_MOON_2020) $(DATA_SUNN_2020)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_MERC) $(DATA_MERC_2020) $(DATA_SUNN_2020)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_VENU) $(DATA_VENU_2020) $(DATA_SUNN_2020)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_MARS) $(DATA_MARS_2020) $(DATA_SUNN_2020)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_JUPI) $(DATA_JUPI_2020) $(DATA_SUNN_2020)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_SATU) $(DATA_SATU_2020) $(DATA_SUNN_2020)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_URAN) $(DATA_URAN_2020) $(DATA_SUNN_2020)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_NEPT) $(DATA_NEPT_2020) $(DATA_SUNN_2020)
-	$(PYTHON) $(SCRIPT) $(PARA_SITE) $(PARA_PLUT) $(DATA_PLUT_2020) $(DATA_SUNN_2020)
+	python run.py para/site_para.txt para/neptune_para.txt data/Neptune2022.txt data/Sun2022.txt
+	python run.py para/site_para.txt para/neptune_para.txt data/Neptune2023.txt data/Sun2023.txt
